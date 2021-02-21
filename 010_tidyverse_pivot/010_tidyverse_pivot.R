@@ -40,7 +40,7 @@ mpg %>%
     )
 
 
-# 3.0 Pivot Longer ----
+# 33.0 ivot Longer ----
 # - Long format best for visualizations
 
 mpg_long_summary_table <- mpg_pivot_table_1 %>%

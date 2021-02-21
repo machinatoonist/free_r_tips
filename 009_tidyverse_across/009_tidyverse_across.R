@@ -39,6 +39,19 @@ mpg %>%
         across(c(cty, hwy), .fns = list(mean = mean, stdev = sd)), .groups = "drop"
     )
 
+# Use skimr() to create summary objects for each named column
+s <- mpg %>%
+    group_by(class) %>%
+    summarise(
+        across(c(cty, hwy), .fns = skim), .groups = "drop"
+    ) 
+
+s %>% class()
+s$class # These are the grouping variables used prior to running skim()
+s$cty
+s$hwy
+
+
 # 2.0 ADVANCED ----
 
 # * CUSTOMIZE NAMING SCHEME ----
